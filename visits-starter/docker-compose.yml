@@ -1,0 +1,15 @@
+version: '3'
+services:
+  redis-server:
+    image: 'redis'
+  nodeapp-server:
+    restart: always
+    build: .
+    ports:
+      - 7000:8081
+
+# restart-Policy
+# "no" - Never attampt to restart container, if it stop or crashes (Default)
+# always - If the container stops for any reason, always attampt to restart it
+# on-failure - Only restart if the container stops with an error code
+# unless-stopped - Always restart unless forcibly stop it
